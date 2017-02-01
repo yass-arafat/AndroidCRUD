@@ -115,4 +115,14 @@
         android:layout_toRightOf="@+id/textView3"
         android:layout_toEndOf="@+id/textView3" />
 
+    <Button
+        android:text="Move To Second Activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_update"
+        android:layout_alignLeft="@+id/editText_surname"
+        android:layout_alignStart="@+id/editText_surname"
+        android:layout_marginTop="30dp"
+        android:id="@+id/buttonNextActivity" />
+
 </RelativeLayout>

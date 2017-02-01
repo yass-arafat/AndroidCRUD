@@ -1,5 +1,6 @@
 package app.main.com.databasehelper;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +14,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
+    SecondMainActivity mySecondMainActivity;
     EditText editName,editSurname,editMarks ,editTextId;
     Button btnAddData;
     Button btnviewAll;
     Button btnDelete;
+    Button btnSecondMainActivity;
 
     Button btnviewUpdate;
     @Override
@@ -33,11 +36,24 @@ public class MainActivity extends AppCompatActivity {
         btnviewAll = (Button)findViewById(R.id.button_viewAll);
         btnviewUpdate= (Button)findViewById(R.id.button_update);
         btnDelete= (Button)findViewById(R.id.button_delete);
+        btnSecondMainActivity = (Button)findViewById(R.id.buttonNextActivity);
         AddData();
         viewAll();
         UpdateData();
         DeleteData();
+        MoveToSecondMainAcity();
     }
+
+    private void MoveToSecondMainAcity() {
+        btnSecondMainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("app.main.com.databasehelper.SecondMainActivity");
+                startActivity(intent);
+            }
+        });
+    }
+
     public void DeleteData() {
         btnDelete.setOnClickListener(
                 new View.OnClickListener() {
